@@ -1,0 +1,41 @@
+{
+  "fraud_network": {
+    "nodes": [
+      {"id": "phone_1", "group": 1, "label": "+91-9876543210 (Scammer)"},
+      {"id": "phone_2", "group": 1, "label": "+91-9123456780 (Scammer)"},
+      {"id": "bank_1", "group": 2, "label": "HDFC Acc (Mule)"},
+      {"id": "bank_2", "group": 2, "label": "SBI Acc (Mule)"},
+      {"id": "device_1", "group": 3, "label": "IMEI 8632..."},
+      {"id": "victim_1", "group": 4, "label": "Victim A"},
+      {"id": "victim_2", "group": 4, "label": "Victim B"}
+    ],
+    "links": [
+      {"source": "phone_1", "target": "victim_1", "value": 1},
+      {"source": "phone_2", "target": "victim_2", "value": 1},
+      {"source": "victim_1", "target": "bank_1", "value": 5},
+      {"source": "victim_2", "target": "bank_2", "value": 5},
+      {"source": "bank_1", "target": "device_1", "value": 2},
+      {"source": "bank_2", "target": "device_1", "value": 2},
+      {"source": "phone_1", "target": "device_1", "value": 3},
+      {"source": "phone_2", "target": "device_1", "value": 3}
+    ]
+  },
+  "geospatial": [
+    {"lat": 28.6139, "lng": 77.2090, "city": "New Delhi", "risk": "High", "incidents": 120},
+    {"lat": 24.0374, "lng": 86.9940, "city": "Jamtara", "risk": "Critical", "incidents": 340},
+    {"lat": 27.8837, "lng": 77.0195, "city": "Mewat", "risk": "Critical", "incidents": 210},
+    {"lat": 19.0760, "lng": 72.8777, "city": "Mumbai", "risk": "Medium", "incidents": 85},
+    {"lat": 12.9716, "lng": 77.5946, "city": "Bangalore", "risk": "High", "incidents": 150}
+  ],
+  "threat_fusion": {
+    "overall_threat_level": "CRITICAL",
+    "active_scam_campaigns": 3,
+    "money_mule_accounts_flagged": 42,
+    "counterfeit_circulation_index": 0.85,
+    "recent_alerts": [
+      "Digital Arrest campaign detected targeting elderly in Delhi.",
+      "High volume of spoofed CBI calls from Jamtara cluster.",
+      "New batch of counterfeit Rs 500 notes intercepted in Mumbai."
+    ]
+  }
+}
